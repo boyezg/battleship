@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box Example</title>
+    <link rel="stylesheet" href="guide.css">
+</head>
+<body>
+
+    <button onclick="showDialog()">Show Guide</button>
+
+    <!-- Dialog Box -->
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <h2>Battleship Game Guide</h2>
+            <p><strong>Overview:</strong></p>
+            <p>Battleship is a two-player strategy game. Players take turns guessing the location of each other's ships on a 10x10 grid. The objective is to sink all of your opponent's ships before they sink yours.</p>
+            <p><strong>How to Play:</strong></p>
+            <ol>
+                <li>Place your fleet (Aircraft Carrier, Battleship, Cruiser, Submarine, Destroyer) on your grid.</li>
+                <li>Take turns guessing coordinates (e.g., "B5").</li>
+                <li>"Hit" or "Miss" will be announced based on the guess.</li>
+                <li>Track progress to sink all ships.</li>
+            </ol>
+            <p><strong>Winning:</strong></p>
+            <p>The first player to sink all ships wins!</p>
+            <p><strong>Tip:</strong> Spread your ships apart and watch patterns!</p>
+            <button onclick="closeDialog()">OK</button>
+        </div>
+    </div>
+
+    <script src="guide.js"></script>
+</body>
+</html>

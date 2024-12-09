@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.dialog-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 95%; /* Ensure the dialog box fits within the viewport */
+    width: 700px; /* Default width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-top: 15%;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5rem; /* Adjust font size for better scaling */
+}
+
+ol {
+    margin-left: 20px;
+    padding-left: 0; /* Prevent excessive padding */
+    list-style: decimal;
+}
+
+button {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .dialog-content {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.25rem; /* Reduce title size for smaller screens */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size */
+    }
+}
