@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  background-color: #F3F3F3;
+  background-color: #e0f3ff;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 *, *::before, *::after {
@@ -29,7 +30,16 @@ body {
   width: 100%;
   transform: rotateY(180deg);
   pointer-events: none;
-  opacity: .25;
+  opacity: .25;animation: float 5s infinite alternate;
+}
+ 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 .btn {
@@ -42,6 +52,10 @@ body {
   cursor: pointer;
   border-radius: .2em;
   color: #333;
+}
+#exit{
+  margin-left: 92%;
+  /* margin-bottom: 30%; */
 }
 
 .btn:hover, .btn:focus {

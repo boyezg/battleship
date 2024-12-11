@@ -161,20 +161,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Single Player
-  function startSinglePlayer() {
-    showDialog();
-    generate(shipArray[0])
-    generate(shipArray[1])
-    generate(shipArray[2])
-    generate(shipArray[3])
-    generate(shipArray[4])
+// Single Player
+function startSinglePlayer() {
+  // showDialog();
 
-    startButton.addEventListener('click', () => {
-      setupButtons.style.display = 'none'
-      playGameSingle()
-    })
-  }
+  // Automatically generate ships for the computer
+  generate(shipArray[0]);
+  generate(shipArray[1]);
+  generate(shipArray[2]);
+  generate(shipArray[3]);
+  generate(shipArray[4]);
+
+  // Event listener for the Start button
+  startButton.addEventListener('click', () => {
+    // Check if all ships are placed before starting the game
+    if (allShipsPlaced) {
+      infoDisplay.innerHTML = ""; // Hide the message
+      setupButtons.style.display = 'none';
+      playGameSingle();
+    } else {
+      infoDisplay.innerHTML = "Please place all ships on the grid.";
+    }
+  });
+
+  // Add an Exit button for navigation
+  // const exitButton = document.createElement('button');
+  // exitButton.innerText = 'Exit';
+  // exitButton.style.padding = '10px 20px';
+  // exitButton.style.backgroundColor = '#f00';
+  // exitButton.style.color = '#fff';
+  // exitButton.style.border = 'none';
+  // exitButton.style.cursor = 'pointer';
+  // exitButton.style.marginLeft = '93%';
+  // exitButton.addEventListener('click', function () {
+  //   window.location.href = 'http://localhost:3000/index.html';
+  // });
+
+  // // Append the Exit button to the document body
+  // document.body.appendChild(exitButton);
+  
+}
+
 
   //Create Board
   function createBoard(grid, squares) {
@@ -336,6 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Game Logic for Single Player
   function playGameSingle() {
+    
     if (isGameOver) return
     if (currentPlayer === 'user') {
       turnDisplay.innerHTML = 'Your Go'

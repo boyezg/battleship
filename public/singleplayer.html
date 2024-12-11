@@ -13,6 +13,8 @@
     <script src="guide.js"></script>
   </head>
   <body>
+    <button onclick="callExit()" class="btn" style=" margin-left: 93%; margin-top: 0.1rem; position: fixed;">Exit</button>
+
     <div class="container">
       <div class="battleship-grid grid-user"></div>
       <div class="battleship-grid grid-computer"></div>
@@ -25,7 +27,7 @@
         <button onclick="showDialog()" id="guide" class="btn">Help</button>
 
         <!-- Dialog Box -->
-        <div id="dialog" class="dialog">
+        <div id="dialog" class="dialog" style="font-size: 1rem;">
             <div class="dialog-content">
                 <h2>Battleship Game Guide</h2>
                 <p><strong>Overview:</strong></p>
@@ -46,6 +48,10 @@
       </div>
       <h3 id="whose-go" class="info-text">Your Go</h3>
       <h3 id="info" class="info-text"></h3>
+      <div id="game-controls">
+
+      </div>
+      
     </div>
 
     <div class="container">
@@ -57,5 +63,6 @@
         <div class="ship carrier-container" draggable="true"><div id="carrier-0"></div><div id="carrier-1"></div><div id="carrier-2"></div><div id="carrier-3"></div><div id="carrier-4"></div></div>
       </div>
     </div>
+    
   </body>
 </html>
