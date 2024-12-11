@@ -6,17 +6,60 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="guide.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
-    
+    <script>
+      function showDialog(event, targetUrl) {
+        event.preventDefault(); // Prevent immediate navigation
+        const dialog = document.getElementById('dialog');
+        if (dialog) {
+          dialog.style.display = 'flex'; // Show the dialog
+        }
+        // Navigate to the target URL after a delay
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 3000); // Adjust delay as needed
+      }
+
+      function closeDialog() {
+        const dialog = document.getElementById('dialog');
+        if (dialog) {
+          dialog.style.display = 'none'; // Hide the dialog
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="splash-container">
       <h1 class="splash-title">Battleship</h1>
       <div>
-        <a href="./singleplayer.html"  class="btn splash-btn" id="guide-pop">SinglePlayer</a>
-        <a href="./multiplayer.html" class="btn splash-btn">MultiPlayer</a>
+        <!-- Single Player Link -->
+        <a href="./singleplayer.html" class="btn splash-btn" id="guide-pop" onclick="showDialog(event, './singleplayer.html')">SinglePlayer</a>
+
+        <!-- Multi Player Link -->
+        <a href="./multiplayer.html" class="btn splash-btn" id="guide-pop" onclick="showDialog(event, './multiplayer.html')">MultiPlayer</a>
       </div>
     </div>
 
-    <img src="/images/battleship-large.svg" class="splash-battleship-image">
+    <!-- Game Guide Dialog -->
+    <div id="dialog" class="dialog" style="display: none; font-size: 1rem;">
+      <div class="dialog-content">
+        <h2>Battleship Game Guide</h2>
+        <p><strong>Overview:</strong></p>
+        <p>Battleship is a two-player strategy game. Players take turns guessing the location of each other's ships on a 10x10 grid. The objective is to sink all of your opponent's ships before they sink yours.</p>
+        <p><strong>How to Play:</strong></p>
+        <ol>
+            <li>Place your fleet (Aircraft Carrier, Battleship, Cruiser, Submarine, Destroyer) on your grid.</li>
+            <li>Take turns guessing coordinates (e.g., "B5").</li>
+            <li>"Hit" or "Miss" will be announced based on the guess.</li>
+            <li>Track progress to sink all ships.</li>
+        </ol>
+        <p><strong>Winning:</strong></p>
+        <p>The first player to sink all ships wins!</p>
+        <p><strong>Tip:</strong> Spread your ships apart and watch patterns!</p>
+        <p>Game Guide also available on<b style="color: blue;">Help Button</b></p>
+        <button onclick="closeDialog()">OK</button>
+      </div>
+    </div>
+
+    <img src="./images/battleship-large.svg" class="splash-battleship-image">
   </body>
 </html>
