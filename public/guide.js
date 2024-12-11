@@ -14,7 +14,7 @@ function closeDialog() {
 
 function callExit(){
     // confirm("Are You Sure To Exit");
-    // window.location.href = 'https://boyezg.github.io/battleship/public/index.html';
-    window.location.href = 'http://localhost:3000/index.html';
+    window.location.href = 'https://boyezg.github.io/battleship/public/index.html';
+    // window.location.href = 'http://localhost:3000/index.html';
 
 }
